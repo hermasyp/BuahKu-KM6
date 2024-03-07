@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LayoutingExample</string>
+    <string name="text_name">Hai, Hermas !</string>
+    <string name="text_greetings">What you gonna eat this day ?</string>
+    <string name="text_title_banner">Belilah buah hasil tanam mahasiswa Gunadarma !</string>
+    <string name="text_desc_banner">Klik pada banner untuk membeli</string>
+</resources>
