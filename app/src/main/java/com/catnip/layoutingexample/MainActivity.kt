@@ -1,12 +1,10 @@
 package com.catnip.layoutingexample
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.system.Os.bind
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.catnip.layoutingexample.databinding.ActivityMainBinding
+import com.catnip.layoutingexample.model.Category
 
 /* LayoutInflater system / findViewById Approach
 
@@ -45,10 +43,26 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
+    private val adapter = CategoryAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setAction()
+        setListCategory()
+    }
+
+    private fun setListCategory() {
+        val data = listOf(
+            Category(image = R.drawable.img_cat, name = "Catto 1"),
+            Category(image = R.drawable.img_cat, name = "Catto 2"),
+            Category(image = R.drawable.img_cat, name = "Catto 3"),
+            Category(image = R.drawable.img_cat, name = "Catto 4")
+        )
+        binding.rvCategory.apply {
+            adapter = this@MainActivity.adapter
+        }
+        adapter.submitData(data)
     }
 
     private fun setAction() {
